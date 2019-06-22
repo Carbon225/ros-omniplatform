@@ -26,8 +26,8 @@ int main(int argc, char **argv)
 void joyCallback(const sensor_msgs::Joy &joy)
 {
     geometry_msgs::Twist twist;
-    twist.linear.x = abs(joy.axes[0]) > 0.1 ? -joy.axes[0] : 0.f;
-    twist.linear.y = abs(joy.axes[1]) > 0.1 ? joy.axes[1] : 0.f;
+    twist.linear.y = abs(joy.axes[0]) > 0.1 ? joy.axes[0] : 0.f;
+    twist.linear.x = abs(joy.axes[1]) > 0.1 ? joy.axes[1] : 0.f;
     twist.angular.z = abs(joy.axes[3]) > 0.1 ? joy.axes[3] : 0.f;
 
     cmdVelPub.publish(twist);

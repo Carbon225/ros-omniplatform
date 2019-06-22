@@ -4,7 +4,7 @@
 
     <link name="base_link">
         <visual>
-            <origin rpy="0 0 ${pi}"/>
+            <origin rpy="0 0 ${pi/2}"/>
             <geometry>
                 <mesh filename="package://omniplatform/urdf/model/Platform.stl" scale="${model_scale}"/>
             </geometry>
@@ -13,7 +13,7 @@
 
     <link name="wheel1">
         <visual>
-            <origin rpy="${pi/2} 0 0"/>
+            <origin rpy="0 ${pi/2} 0"/>
             <geometry>
                 <mesh filename="package://omniplatform/urdf/model/Omniwheel.stl" scale="${model_scale}"/>
             </geometry>
@@ -25,7 +25,7 @@
 
     <link name="wheel2">
         <visual>
-            <origin rpy="${pi/2} 0 0"/>
+            <origin rpy="0 ${pi/2} 0"/>
             <geometry>
                 <mesh filename="package://omniplatform/urdf/model/Omniwheel.stl" scale="${model_scale}"/>
             </geometry>
@@ -37,7 +37,7 @@
 
     <link name="wheel3">
         <visual>
-            <origin rpy="${pi/2} 0 0"/>
+            <origin rpy="0 ${pi/2} 0"/>
             <geometry>
                 <mesh filename="package://omniplatform/urdf/model/Omniwheel.stl" scale="${model_scale}"/>
             </geometry>
@@ -48,19 +48,19 @@
     </link>
 
     <joint name="wheel1_axis" type="fixed">
-        <origin xyz="0 0.077647 0" rpy="0 0 0"/>
+        <origin xyz="0.077647 0 0" rpy="0 0 0"/>
         <parent link="base_link"/>
         <child link="wheel1"/>
     </joint>
 
     <joint name="wheel2_axis" type="fixed">
-        <origin xyz="${cos(2*pi/3)*0 - sin(2*pi/3)*0.077647} ${sin(2*pi/3)*0 + cos(2*pi/3)*0.077647} 0" rpy="0 0 ${2*pi/3}"/>
+        <origin xyz="${cos(2*pi/3)*0.077647 - sin(2*pi/3)*0} ${sin(2*pi/3)*0.077647 + cos(2*pi/3)*0} 0" rpy="0 0 ${2*pi/3}"/>
         <parent link="base_link"/>
         <child link="wheel2"/>
     </joint>
 
     <joint name="wheel3_axis" type="fixed">
-        <origin xyz="${cos(2*pi/3*2)*0 - sin(2*pi/3*2)*0.077647} ${sin(2*pi/3*2)*0 + cos(2*pi/3*2)*0.077647} 0" rpy="0 0 ${2*pi/3*2}"/>
+        <origin xyz="${cos(2*pi/3*2)*0.077647 - sin(2*pi/3*2)*0} ${sin(2*pi/3*2)*0.077647 + cos(2*pi/3*2)*0} 0" rpy="0 0 ${2*pi/3*2}"/>
         <parent link="base_link"/>
         <child link="wheel3"/>
     </joint>
