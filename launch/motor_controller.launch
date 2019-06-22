@@ -1,0 +1,7 @@
+<launch>
+    <env name="ROS_MASTER_URI" value="http://192.168.2.48:11311/"/>
+    <node pkg="rosserial_python" type="serial_node.py" name="atmega32u4" respawn="true">
+        <param name="port" value="/dev/ttyACM0"/>
+        <param name="baud" value="115200"/>
+    </node>
+</launch>

@@ -1,0 +1,9 @@
+<launch>
+    <node pkg="joy" type="joy_node" name="joy_node" respawn="true">
+
+    </node>
+
+    <node pkg="omniplatform" type="controller_node" name="controller_node" respawn="true">
+
+    </node>
+</launch>
