@@ -1,5 +1,5 @@
 <launch>
-    <node pkg="cv_camera" type="cv_camera_node" name="camera2" respawn="true">
-
+    <node pkg="cv_camera" type="cv_camera_node" name="ip_camera" respawn="true">
+        <param name="file" type="string" value="http://192.168.2.42:8080/video"/>
     </node>
 </launch>
