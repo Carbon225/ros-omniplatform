@@ -2,6 +2,7 @@
     <node pkg="tf2_ros" type="static_transform_publisher" name="global_localization" args="0 0 0 0 0 0 map odom" />
 
     <node pkg="mouse_odom" type="mouse_odom_node" name="mouse_odom_node" respawn="true">
-        <param name="device" type="string" value="/dev/input/mouse0"/>
+        <param name="device" type="string" value="/dev/input/event0"/>
+        <param name="event_mode" type="bool" value="true"/>
     </node>
 </launch>
