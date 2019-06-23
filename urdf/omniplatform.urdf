@@ -11,6 +11,8 @@
         </visual>
     </link>
 
+    <!-- Wheels !-->
+
     <link name="wheel1">
         <visual>
             <origin rpy="0 ${pi/2} 0"/>
@@ -63,5 +65,43 @@
         <origin xyz="${cos(2*pi/3*2)*0.077647 - sin(2*pi/3*2)*0} ${sin(2*pi/3*2)*0.077647 + cos(2*pi/3*2)*0} 0" rpy="0 0 ${2*pi/3*2}"/>
         <parent link="base_link"/>
         <child link="wheel3"/>
+    </joint>
+
+    <!-- Mice !-->
+
+    <link name="mouse1">
+        <visual>
+            <origin xyz="0 0 0.01"/>
+            <geometry>
+                <cylinder radius="0.005" length="0.02"/>
+            </geometry>
+            <material name="mouse_material">
+                <color rgba="0 0 1 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="mouse2">
+        <visual>
+            <origin xyz="0 0 0.01"/>
+            <geometry>
+                <cylinder radius="0.005" length="0.02"/>
+            </geometry>
+            <material name="mouse_material">
+                <color rgba="0 0 1 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="mouse1_joint" type="fixed">
+        <origin xyz="0 0.03 -0.025"/>
+        <parent link="base_link"/>
+        <child link="mouse1"/>
+    </joint>
+
+    <joint name="mouse2_joint" type="fixed">
+        <origin xyz="0 -0.03 -0.025"/>
+        <parent link="base_link"/>
+        <child link="mouse2"/>
     </joint>
 </robot>
