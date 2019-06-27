@@ -93,15 +93,51 @@
         </visual>
     </link>
 
+    <link name="mouse3">
+        <visual>
+            <origin xyz="0 0 0.01"/>
+            <geometry>
+                <cylinder radius="0.005" length="0.02"/>
+            </geometry>
+            <material name="mouse_material">
+                <color rgba="0 0 1 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="mouse4">
+        <visual>
+            <origin xyz="0 0 0.01"/>
+            <geometry>
+                <cylinder radius="0.005" length="0.02"/>
+            </geometry>
+            <material name="mouse_material">
+                <color rgba="0 0 1 1"/>
+            </material>
+        </visual>
+    </link>
+
     <joint name="mouse1_joint" type="fixed">
-        <origin xyz="0 0.03 -0.025"/>
+        <origin xyz="0 0.09 -0.025"/>
         <parent link="base_link"/>
         <child link="mouse1"/>
     </joint>
 
     <joint name="mouse2_joint" type="fixed">
-        <origin xyz="0 -0.03 -0.025"/>
+        <origin xyz="0 0.03 -0.025"/>
         <parent link="base_link"/>
         <child link="mouse2"/>
+    </joint>
+
+    <joint name="mouse3_joint" type="fixed">
+        <origin xyz="0 -0.03 -0.025"/>
+        <parent link="base_link"/>
+        <child link="mouse3"/>
+    </joint>
+
+    <joint name="mouse4_joint" type="fixed">
+        <origin xyz="0 -0.09 -0.025"/>
+        <parent link="base_link"/>
+        <child link="mouse4"/>
     </joint>
 </robot>
