@@ -3,10 +3,10 @@
 
     <node pkg="mouse_odom" type="odom_combiner_node" name="odom_combiner_node" respawn="true">
         <param name="mouse1" type="string" value="mouse1"/>
-        <param name="mouse2" type="string" value="mouse2"/>
+        <param name="mouse2" type="string" value="mouse4"/>
     </node>
 
-    <node pkg="mouse_odom" type="mouse_odom_node" name="mouse1_node" respawn="true">
+    <!--<node pkg="mouse_odom" type="mouse_odom_node" name="mouse1_node" respawn="true">
         <param name="frame_id" type="string" value="mouse1"/>
         <param name="dpi" type="int" value="100"/>
         <param name="device" type="string" value="/dev/input/mouse0"/>
@@ -18,5 +18,5 @@
         <param name="dpi" type="int" value="100"/>
         <param name="device" type="string" value="/dev/input/mouse0"/>
         <param name="event_mode" type="bool" value="false"/>
-    </node>
+    </node>!-->
 </launch>
