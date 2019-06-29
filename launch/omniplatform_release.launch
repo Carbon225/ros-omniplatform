@@ -1,0 +1,18 @@
+<launch>
+    <group>
+        <machine name="pc" address="ubuntu.local" env-loader="/home/carbon/ros_env.sh" user="carbon" default="true"/>
+
+        <include file="$(find omniplatform)/launch/controller.launch"/>
+    </group>
+
+    <group>
+        <machine name="rpi" address="rosberry.local" env-loader="/home/carbon/ros_env.sh" user="carbon" default="true"/>
+
+        <include file="$(find omniplatform)/launch/robot.launch"/>
+        <include file="$(find omniwheel)/launch/motor_controller.launch"/>
+        <include file="$(find omniwheel)/launch/3_wheel.launch"/>
+        <include file="$(find omniwheel)/launch/4_mice.launch"/>
+        <include file="$(find omniwheel)/launch/odom.launch"/>
+        <include file="$(find omniwheel)/launch/camera.launch"/>
+    </group>
+</launch>
